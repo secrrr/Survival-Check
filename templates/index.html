@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Status Pasien</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0a0c6d;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin: 5px;
+            display: flex;
+            justify-content: end;
+        }
+
+        .navbar ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        margin-right: 14px; /* Menghapus margin-right pada elemen <a> */
+        padding: 8px 10px; /* Tambahkan padding jika diperlukan */
+}
+
+        .navbar ul li a:hover {
+            color: #f0db4f;
+        }
+
+        .navbar .brand {
+            font-size: 1.8em;
+            color: white;
+            font-weight: bold;
+        }
+
+        header {
+            position: relative;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px; /* Agar header tidak tertutup navbar */
+        }
+
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://asset-a.grid.id/crop/0x0:0x0/x/photo/2022/04/05/transformation-gd01627788_1920j-20220405020056.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(2.8px) brightness(0.7); /* Mengurangi kecerahan gambar */
+            z-index: -1;
+        }
+
+        header h1 {
+            font-size: 5em;
+            margin: 0;
+            color: #f0db4f; /* Ganti warna h1 agar lebih mencolok */
+            z-index: 1;
+        }
+
+        header p {
+            font-size: 1.8em;
+            margin: 10px 0;
+            z-index: 1;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: center;
+            padding: 50px 20px;
+            margin-top: -100px; /* Mengurangi jarak form dan header */
+        }
+
+        form {
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            max-width: 600px;
+            background-color: #fff;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        form:hover {
+            box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        form div {
+            margin-bottom: 15px;
+            width: 100%;
+            text-align: left;
+        }
+
+        form label {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #333;
+        }
+
+        form input, form select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        form input:focus, form select:focus {
+            border-color: #0a0c6d;
+        }
+
+        form p {
+            font-size: 0.85em;
+            color: #666;
+            margin: 5px 0 0;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form button {
+            padding: 12px 25px;
+            background-color: #1215ca;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        form button:hover {
+            background-color: #0a0c6d;
+        }
+
+        form button:active {
+            transform: scale(0.95);
+        }
+
+        form h1 {
+            font-size: 1.8em;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        footer {
+            background-color: #0a0c6d;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 3em;
+            }
+
+            header p {
+                font-size: 1.4em;
+            }
+
+            .form-container {
+                padding: 30px 10px;
+            }
+
+            form {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="brand">Survival Check</div>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#prediction-form">Prediksi</a></li> <!-- Anchor link to the form -->
+    </ul>
+</div>
+
+<header>
+    <div class="header-bg"></div>
+    <h1>Prediksi Status Pasien</h1>
+    <p>Pediatrik dengan Glioma Tingkat Tinggi</p>
+</header>
+
+<!-- Form inputan -->
+<div id="prediction-form" class="form-container"> <!-- Add the ID here -->
+    <form id="predictionForm" action="/predict" method="POST">
+        <h1>Masukkan Data Klinis Penderita</h1>
+        {% for col in columns %}
+        <div>
+            <label for="{{ col }}">{{ col }}:</label>
+            {% if col in dropdown_data %}
+                <select id="{{ col }}" name="{{ col }}" required>
+                    {% for option in dropdown_data[col] %}
+                        <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+            {% else %}
+                <input type="text" id="{{ col }}" name="{{ col }}" required>
+            {% endif %}
+            <p>{{ explanations[col] }}</p>
+        </div>
+        {% endfor %}
+        <div class="button-container">
+            <button type="submit">Prediksi</button>
+        </div>
+    </form>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Survival Check. Anggi&Cavel.</p>
+</footer>
+
+<script>
+    document.getElementById('predictionForm').addEventListener('submit', function(event) {
+        const inputs = this.querySelectorAll('input[required], select[required]');
+        let allFilled = true;
+
+        // Cek setiap input untuk memastikan semua diisi
+        inputs.forEach(function(input) {
+            if (!input.value) {
+                allFilled = false;
+                alert('Silakan isi semua field yang diperlukan!');
+                input.focus(); // Fokus pada input yang kosong
+                return false; // Hentikan loop
+            }
+        });
+
+        // Jika tidak semua terisi, batalkan submit
+        if (!allFilled) {
+            event.preventDefault();
+        }
+    });
+</script>
+
+</body>
+</html>

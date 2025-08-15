@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Prediksi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex; /* Menggunakan Flexbox untuk body */
+            flex-direction: column; /* Mengatur arah flex menjadi kolom */
+            height: 100vh; /* Mengatur tinggi body ke 100% */
+            justify-content: space-between; /* Menjaga footer di bawah dan konten di tengah */
+        }
+        .result-container {
+            display: flex; /* Menambahkan Flexbox untuk memudahkan penataan */
+            justify-content: center; /* Pusatkan secara horizontal */
+            align-items: center; /* Pusatkan secara vertikal */
+            padding: 20px;
+            flex-grow: 1; /* Memungkinkan kontainer untuk mengisi ruang yang tersisa */
+        }
+        form {
+            padding: 30px; /* Menambah padding untuk lebih nyaman */
+            border: 1px solid #ddd;
+            max-width: 600px;
+            background-color: #ffffff; /* Warna latar belakang form */
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15); /* Bayangan yang lebih halus */
+            border-radius: 12px; /* Sudut yang membulat */
+            display: flex; /* Menggunakan flexbox untuk form */
+            flex-direction: column; /* Ubah menjadi kolom */
+            align-items: center; /* Pusatkan elemen di dalam form */
+            transition: transform 0.3s; /* Efek transisi saat hover */
+        }
+        form:hover {
+            transform: translateY(-2px); /* Efek mengangkat saat hover */
+        }
+        h2 {
+            font-size: 2.5em;
+            color: #1215ca; /* Warna judul */
+            margin-bottom: 20px;
+            text-align: center; /* Pusatkan teks */
+        }
+        p {
+            font-size: 1.5em;
+            color: #333; /* Warna teks hasil prediksi */
+            margin-bottom: 30px;
+            text-align: center; /* Pusatkan teks */
+        }
+        strong {
+            color: #d9534f; /* Warna kuat untuk hasil prediksi */
+            font-size: 1.8em;
+        }
+        a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #1215ca; /* Warna latar belakang tombol */
+            color: white; /* Warna teks tombol */
+            border-radius: 5px; /* Membulatkan sudut tombol */
+            transition: background-color 0.3s; /* Transisi warna */
+            font-size: 1.1em; /* Ukuran font tombol yang lebih besar */
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Bayangan tombol */
+        }
+        a:hover {
+            background-color: #0a0c6d; /* Warna saat hover */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Bayangan saat hover */
+        }
+        footer {
+            background-color: #1215ca; /* Warna latar belakang footer */
+            color: white; /* Warna teks footer */
+            text-align: center; /* Pusatkan teks footer */
+            padding: 10px 0; /* Padding atas dan bawah */
+            width: 100%; /* Lebar footer 100% */
+            bottom: 0;
+            position: relative;
+        }
+        footer p {
+            color: white;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="result-container">
+    <form>
+        <h2>Hasil Prediksi</h2>
+        <p>Status pasien: <strong>{{ prediction }}</strong></p>
+        <a href="/">Kembali ke Formulir</a>
+    </form>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Survival Check. Anggi&Cavel.</p>
+</footer>
+
+</body>
+</html>
